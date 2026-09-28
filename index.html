@@ -3,19 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arnold Rey Strader Lapuz — Full-Stack Web & Android Developer</title>
+  <title>Arnold Rey Strader Lapuz — Full-Stack Software Engineer &amp; Cyber Systems Developer</title>
   <meta name="description" content="Portfolio of Arnold Rey Strader Lapuz, Full-Stack Web & Android Developer from Olongapo City, Philippines. Specialized in Laravel, PHP, MySQL, Kotlin, and Jetpack Compose." />
   <meta name="author" content="Arnold Rey Strader Lapuz" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.min.css" />
 </head>
 <body>
 
   <!-- CUSTOM CURSOR -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- 5D FULLPAGE MULTI-STAGE BACKGROUND CANVAS -->
+  <canvas id="bgCanvas5D"></canvas>
+
+  <!-- 5D SENSORY SPARKS & EMBERS CANVAS -->
+  <canvas id="sparksCanvas"></canvas>
 
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
@@ -29,7 +35,13 @@
       <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
       <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="btn-hire" id="btnHire">Hire Me</a>
+    <div class="nav-actions">
+      <button class="btn-sound-toggle active" id="soundToggle" title="Toggle 5D Spatial Audio FX">
+        <span class="sound-wave"><span></span><span></span><span></span></span>
+        <span class="sound-label">5D AUDIO</span>
+      </button>
+      <a href="#contact" class="btn-hire magnetic-btn" id="btnHire">Hire Me</a>
+    </div>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
@@ -37,55 +49,111 @@
 
   <!-- HERO -->
   <section class="hero" id="hero">
+    <!-- FULL BLEED 3D HOLOGRAPHIC WEBGL BACKGROUND -->
+    <div class="hero-3d-bg" id="hero3DVisual">
+      <canvas id="threeCanvas"></canvas>
+    </div>
+
+    <!-- 3D AMBIENT OVERLAYS -->
     <div class="hero-bg">
-      <img src="assets/img/hero_bg.jpg" alt="Hero Background" class="hero-bg-img" />
       <div class="hero-overlay"></div>
+      <div class="hero-grid-3d"></div>
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
     </div>
-    <canvas class="particles-canvas" id="particlesCanvas"></canvas>
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        <span>Available for Hire &bull; Olongapo City, PH</span>
-      </div>
-      <h1 class="hero-title">
-        <span class="greeting">Hello, I'm</span>
-        <span class="name">Arnold Rey <span class="gold">Lapuz</span></span>
-      </h1>
-      <p class="hero-subtitle">
-        <span class="typed-prefix">Specializing in </span>
-        <span class="typed-text" id="typedText"></span>
-        <span class="typed-cursor">|</span>
-      </p>
-      <p class="hero-desc">
-        A versatile Full-Stack Web & Android Developer from Olongapo City. I architect production-ready enterprise web applications using Laravel, PHP, and MySQL, alongside modern reactive Android apps built with Kotlin and Jetpack Compose.
-      </p>
-      <div class="hero-cta">
-        <a href="#projects" class="btn-primary" id="btnViewWork">
-          <span>Explore My Projects</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="#contact" class="btn-secondary" id="btnGetInTouch">Get in Touch</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-num" data-target="10">0</span>
-          <span class="stat-plus">+</span>
-          <span class="stat-label">Repositories & Systems</span>
+
+    <!-- 3D FLOATING HOLOGRAM TELEMETRY BADGES -->
+    <div class="hero-hologram-layer">
+      <div class="hologram-badge badge-pos-1" data-depth="25">
+        <div class="badge-icon-box">⚡</div>
+        <div class="badge-text-box">
+          <span class="badge-sub">Enterprise Backend</span>
+          <span class="badge-val">Laravel 12 &bull; PHP 8.2</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-num" data-target="100">0</span>
-          <span class="stat-plus">%</span>
-          <span class="stat-label">Clean Architecture</span>
+      </div>
+
+      <div class="hologram-badge badge-pos-2" data-depth="35">
+        <div class="badge-icon-box">📱</div>
+        <div class="badge-text-box">
+          <span class="badge-sub">Native Android</span>
+          <span class="badge-val">Jetpack Compose &bull; Room</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-num" data-target="3">0</span>
-          <span class="stat-plus">+</span>
-          <span class="stat-label">Enterprise Deployments</span>
+      </div>
+
+      <div class="hologram-badge badge-pos-3" data-depth="15">
+        <div class="badge-icon-box">🛡️</div>
+        <div class="badge-text-box">
+          <span class="badge-sub">High Integrity</span>
+          <span class="badge-val">MySQL &bull; SQLite</span>
         </div>
       </div>
     </div>
+
+    <!-- HERO FOREGROUND CONTENT -->
+    <div class="hero-layout">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-status-bars">
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <span>Available for Hire &bull; Olongapo City, PH</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="greeting">System Architect &amp; Software Developer</span>
+          <span class="name">Arnold Rey S. <span class="gold">Lapuz</span></span>
+        </h1>
+        <p class="hero-subtitle">
+          <span class="typed-prefix">Specializing in </span>
+          <span class="typed-text" id="typedText"></span>
+          <span class="typed-cursor">|</span>
+        </p>
+        <p class="hero-desc">
+          A versatile Full-Stack Web &amp; Android Developer from Olongapo City. I architect production-ready enterprise web applications using Laravel, PHP, and MySQL, alongside modern reactive Android apps built with Kotlin and Jetpack Compose.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary magnetic-btn" id="btnViewWork">
+            <span>Explore My Projects</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn-secondary magnetic-btn" id="btnGetInTouch">Get in Touch</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num" data-target="10">0</span>
+            <span class="stat-plus">+</span>
+            <span class="stat-label">Repositories &amp; Systems</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="100">0</span>
+            <span class="stat-plus">%</span>
+            <span class="stat-label">Clean Architecture</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="3">0</span>
+            <span class="stat-plus">+</span>
+            <span class="stat-label">Enterprise Deployments</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D INTERACTIVE CONTROLS / HUD (Floating at bottom center) -->
+    <div class="hud-3d-controls">
+      <div class="hud-label">
+        <span class="hud-pulse"></span>
+        <span>3D CORE</span>
+      </div>
+      <div class="hud-actions">
+        <button class="hud-btn active" data-geometry="torus">Torus Knot</button>
+        <button class="hud-btn" data-geometry="icosa">Geosphere</button>
+        <button class="hud-btn" data-geometry="quantum">Quantum Core</button>
+      </div>
+      <div class="hud-hint">Drag 360&deg; &bull; Hover</div>
+    </div>
+
     <div class="scroll-indicator" id="scrollIndicator">
       <span class="scroll-text">Scroll</span>
       <div class="scroll-line"><div class="scroll-dot"></div></div>
@@ -102,12 +170,24 @@
       </div>
       <div class="about-grid">
         <div class="about-visual">
-          <div class="avatar-wrapper">
-            <div class="avatar-ring"></div>
-            <div class="avatar-ring ring-2"></div>
+          <div class="avatar-wrapper" id="avatarWrapper">
+            <div class="projector-base"></div>
+            <div class="projector-cone"></div>
+            <div class="gyro-ring gyro-ring-1"></div>
+            <div class="gyro-ring gyro-ring-2"></div>
+            <div class="gyro-ring gyro-ring-3"></div>
             <div class="avatar-core">
-              <img src="assets/img/profile.jpg" alt="Arnold Rey Strader Lapuz" class="avatar-photo" onerror="this.style.display='none'" />
-              <span class="avatar-initials">AL</span>
+              <div class="avatar-scanline"></div>
+              <div class="cyber-reactor-rings">
+                <div class="reactor-radar"></div>
+                <div class="reactor-pulse-orb"></div>
+                <div class="reactor-ticks"></div>
+              </div>
+              <div class="avatar-cyber-emblem">
+                <div class="emblem-code-tag">&lt;DEV&gt;</div>
+                <div class="emblem-monogram">AL</div>
+                <div class="emblem-sub">CORE NODE</div>
+              </div>
             </div>
             <div class="avatar-badge">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
@@ -127,6 +207,35 @@
           <p class="about-intro">I'm <strong>Arnold Rey Strader Lapuz</strong>, a software developer based in Olongapo City, Zambales, studying Information Technology at <strong>COMTEQ Computer and Business College</strong>.</p>
           <p class="about-body">I have a proven track record of engineering complex, production-ready web and mobile applications. My work spans high-stakes enterprise software—such as the <strong>Perez Law Office Billing &amp; Expense Tracker</strong>, the <strong>RegComp Legal Compliance &amp; Hearing Scheduling Platform</strong>, and the <strong>OCNHS Guidance Counseling Profiling System</strong>—as well as reactive native Android apps using <strong>Kotlin, Jetpack Compose, and Room DB</strong>.</p>
           <p class="about-body">I bridge backend rigor (relational schemas, transactional financial amortization, automated PDF reporting, and RESTful APIs) with sleek modern interfaces that enhance productivity. I believe in clean code, data integrity, and creating software that truly solves practical organizational challenges.</p>
+
+          <!-- Telemetry Information Matrix -->
+          <div class="about-info-matrix">
+            <div class="matrix-card">
+              <span class="matrix-label">FULL NAME</span>
+              <span class="matrix-value">Arnold Rey Strader Lapuz</span>
+            </div>
+            <div class="matrix-card">
+              <span class="matrix-label">LOCATION</span>
+              <span class="matrix-value">Olongapo City, Zambales, PH</span>
+            </div>
+            <div class="matrix-card">
+              <span class="matrix-label">INSTITUTION</span>
+              <span class="matrix-value">COMTEQ College</span>
+            </div>
+            <div class="matrix-card">
+              <span class="matrix-label">DIRECT CONTACT</span>
+              <span class="matrix-value">(+63) 966-456-7529</span>
+            </div>
+            <div class="matrix-card">
+              <span class="matrix-label">PRIMARY EMAIL</span>
+              <span class="matrix-value">arnldrylapuz@gmail.com</span>
+            </div>
+            <div class="matrix-card">
+              <span class="matrix-label">GITHUB ID</span>
+              <span class="matrix-value">@arnldry</span>
+            </div>
+          </div>
+
           <div class="about-tags">
             <span class="tag">Laravel 11 &amp; 12</span>
             <span class="tag">PHP 8.2 &amp; MySQL</span>
@@ -695,6 +804,35 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <!-- 5D CYBERNETIC TELEMETRY DOCK (HUD) -->
+  <aside class="cyber-telemetry-dock" id="cyberTelemetryDock" aria-label="5D Spatial Telemetry System">
+    <div class="telemetry-row">
+      <span class="telemetry-status-led"></span>
+      <span class="telemetry-tag">5D HUD:</span>
+      <span class="telemetry-val" id="hudSystemStatus">QUANTUM_STABLE</span>
+    </div>
+    <div class="telemetry-row">
+      <span class="telemetry-tag">COORDS:</span>
+      <span class="telemetry-val mono" id="hudCoords">X: 000 | Y: 000</span>
+    </div>
+    <div class="telemetry-row">
+      <span class="telemetry-tag">WARP:</span>
+      <span class="telemetry-val mono" id="hudWarp">1.00x [CRUISE]</span>
+    </div>
+    <div class="telemetry-row">
+      <span class="telemetry-tag">5D SCENE:</span>
+      <span class="telemetry-val mono" id="hudDimension">1/5 [COSMIC_WARP]</span>
+    </div>
+    <div class="telemetry-row">
+      <span class="telemetry-tag">5D FREQ:</span>
+      <span class="telemetry-val mono" id="hudAudioFreq">PENTATONIC</span>
+      <div class="hud-mini-spectrum" id="hudSpectrum">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+  </aside>
+
+  <script src="assets/js/three.min.js"></script>
+  <script src="assets/js/main.min.js"></script>
 </body>
 </html>
