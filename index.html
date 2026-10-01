@@ -3,836 +3,823 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arnold Rey Strader Lapuz — Full-Stack Software Engineer &amp; Cyber Systems Developer</title>
+  <title>Arnold Rey Strader Lapuz — Full-Stack Web &amp; Android Developer</title>
   <meta name="description" content="Portfolio of Arnold Rey Strader Lapuz, Full-Stack Web & Android Developer from Olongapo City, Philippines. Specialized in Laravel, PHP, MySQL, Kotlin, and Jetpack Compose." />
   <meta name="author" content="Arnold Rey Strader Lapuz" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.min.css" />
 </head>
 <body>
 
-  <!-- CUSTOM CURSOR -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-trail" id="cursorTrail"></div>
+  <!-- AMBIENT TOP SCROLL PROGRESS BAR -->
+  <div class="scroll-progress-line" id="scrollProgress"></div>
 
-  <!-- 5D FULLPAGE MULTI-STAGE BACKGROUND CANVAS -->
-  <canvas id="bgCanvas5D"></canvas>
+  <!-- CUSTOM MOUSE GLOW ATTRACTOR (DESKTOP) -->
+  <div class="cursor-glow" id="cursorGlow"></div>
 
-  <!-- 5D SENSORY SPARKS & EMBERS CANVAS -->
-  <canvas id="sparksCanvas"></canvas>
+  <!-- AMBIENT BACKGROUND GLOW ORBS -->
+  <div class="ambient-canvas">
+    <div class="glow-orb orb-primary"></div>
+    <div class="glow-orb orb-secondary"></div>
+    <div class="glow-orb orb-tertiary"></div>
+    <div class="ambient-grid"></div>
+  </div>
 
-  <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-brand">
-      <span class="brand-initial">A</span><span class="brand-text">rnold <span class="gold">Lapuz</span></span>
-    </div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
-      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-      <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
-      <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
-      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <button class="btn-sound-toggle active" id="soundToggle" title="Toggle 5D Spatial Audio FX">
-        <span class="sound-wave"><span></span><span></span><span></span></span>
-        <span class="sound-label">5D AUDIO</span>
-      </button>
-      <a href="#contact" class="btn-hire magnetic-btn" id="btnHire">Hire Me</a>
-    </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+  <!-- FLOATING GLASS NAVBAR -->
+  <header class="navbar-wrapper">
+    <nav class="navbar" id="navbar">
+      <a href="#hero" class="nav-brand" aria-label="Arnold Rey Home">
+        <span class="brand-monogram">AL</span>
+        <span class="brand-name">Arnold <span class="highlight">Lapuz</span></span>
+      </a>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <!-- FULL BLEED 3D HOLOGRAPHIC WEBGL BACKGROUND -->
-    <div class="hero-3d-bg" id="hero3DVisual">
-      <canvas id="threeCanvas"></canvas>
-    </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#game" class="nav-link nav-link-game" data-section="game"><span class="badge-mini">PLAY</span> Dev Arcade</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
 
-    <!-- 3D AMBIENT OVERLAYS -->
-    <div class="hero-bg">
-      <div class="hero-overlay"></div>
-      <div class="hero-grid-3d"></div>
-      <div class="hero-orb orb-1"></div>
-      <div class="hero-orb orb-2"></div>
-    </div>
-
-    <!-- 3D FLOATING HOLOGRAM TELEMETRY BADGES -->
-    <div class="hero-hologram-layer">
-      <div class="hologram-badge badge-pos-1" data-depth="25">
-        <div class="badge-icon-box">⚡</div>
-        <div class="badge-text-box">
-          <span class="badge-sub">Enterprise Backend</span>
-          <span class="badge-val">Laravel 12 &bull; PHP 8.2</span>
-        </div>
+      <div class="nav-actions">
+        <button class="btn-sound" id="btnSoundToggle" title="Toggle Spatial Audio FX">
+          <span class="sound-bars"><span></span><span></span><span></span></span>
+          <span class="sound-text">SOUND</span>
+        </button>
+        <a href="#game" class="btn-game-quick" title="Jump to Arcade Game">
+          <span>🎮</span> <span class="game-btn-text">PLAY GAME</span>
+        </a>
+        <a href="#contact" class="btn-hire">Hire Me</a>
+        <button class="nav-burger" id="navBurger" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+    </nav>
+  </header>
 
-      <div class="hologram-badge badge-pos-2" data-depth="35">
-        <div class="badge-icon-box">📱</div>
-        <div class="badge-text-box">
-          <span class="badge-sub">Native Android</span>
-          <span class="badge-val">Jetpack Compose &bull; Room</span>
+  <main>
+    <!-- ═══════════════════════════════════════════
+         1. HERO SECTION
+         ═══════════════════════════════════════════ -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <!-- Hero Meta Badge -->
+        <div class="hero-status-badge">
+          <span class="status-pulse-dot"></span>
+          <span class="status-text">Available for Full-Stack &amp; Android Roles &bull; Olongapo City, PH</span>
         </div>
-      </div>
 
-      <div class="hologram-badge badge-pos-3" data-depth="15">
-        <div class="badge-icon-box">🛡️</div>
-        <div class="badge-text-box">
-          <span class="badge-sub">High Integrity</span>
-          <span class="badge-val">MySQL &bull; SQLite</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- HERO FOREGROUND CONTENT -->
-    <div class="hero-layout">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          <span class="badge-status-bars">
-            <span></span><span></span><span></span><span></span>
-          </span>
-          <span>Available for Hire &bull; Olongapo City, PH</span>
-        </div>
-        <h1 class="hero-title">
-          <span class="greeting">System Architect &amp; Software Developer</span>
-          <span class="name">Arnold Rey S. <span class="gold">Lapuz</span></span>
+        <!-- Headline -->
+        <h1 class="hero-headline">
+          Architecting <span class="gradient-text">Enterprise Web</span> &amp; <span class="gradient-text-alt">Native Android</span> Systems.
         </h1>
-        <p class="hero-subtitle">
-          <span class="typed-prefix">Specializing in </span>
-          <span class="typed-text" id="typedText"></span>
-          <span class="typed-cursor">|</span>
+
+        <!-- Subtitle & Typed Focus -->
+        <p class="hero-subhead">
+          I'm <strong>Arnold Rey Strader Lapuz</strong>, an IT developer from <strong>COMTEQ College</strong>. I engineer mission-critical business platforms with <strong>Laravel 12, PHP, &amp; MySQL</strong> alongside modern reactive Android applications with <strong>Kotlin &amp; Jetpack Compose</strong>.
         </p>
-        <p class="hero-desc">
-          A versatile Full-Stack Web &amp; Android Developer from Olongapo City. I architect production-ready enterprise web applications using Laravel, PHP, and MySQL, alongside modern reactive Android apps built with Kotlin and Jetpack Compose.
-        </p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn-primary magnetic-btn" id="btnViewWork">
-            <span>Explore My Projects</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+
+        <!-- CTAs -->
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn-action-primary">
+            <span>Explore Projects (8)</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#contact" class="btn-secondary magnetic-btn" id="btnGetInTouch">Get in Touch</a>
+          <a href="#game" class="btn-action-game">
+            <span>🕹️ Play Dev Arcade</span>
+          </a>
+          <a href="#contact" class="btn-action-secondary">
+            <span>Get in Touch</span>
+          </a>
         </div>
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-num" data-target="10">0</span>
-            <span class="stat-plus">+</span>
-            <span class="stat-label">Repositories &amp; Systems</span>
+
+        <!-- Metric Counter Ribbon -->
+        <div class="hero-metrics-ribbon">
+          <div class="metric-card">
+            <span class="metric-number" data-target="8">0</span>
+            <span class="metric-plus">+</span>
+            <span class="metric-label">Production Deployments</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-num" data-target="100">0</span>
-            <span class="stat-plus">%</span>
-            <span class="stat-label">Clean Architecture</span>
+          <div class="metric-divider"></div>
+          <div class="metric-card">
+            <span class="metric-number" data-target="10">0</span>
+            <span class="metric-plus">+</span>
+            <span class="metric-label">GitHub Repositories</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-num" data-target="3">0</span>
-            <span class="stat-plus">+</span>
-            <span class="stat-label">Enterprise Deployments</span>
+          <div class="metric-divider"></div>
+          <div class="metric-card">
+            <span class="metric-number" data-target="100">0</span>
+            <span class="metric-plus">%</span>
+            <span class="metric-label">Clean Architecture</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-card">
+            <span class="metric-badge-tag">COMTEQ</span>
+            <span class="metric-label">BS Information Technology</span>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- 3D INTERACTIVE CONTROLS / HUD (Floating at bottom center) -->
-    <div class="hud-3d-controls">
-      <div class="hud-label">
-        <span class="hud-pulse"></span>
-        <span>3D CORE</span>
-      </div>
-      <div class="hud-actions">
-        <button class="hud-btn active" data-geometry="torus">Torus Knot</button>
-        <button class="hud-btn" data-geometry="icosa">Geosphere</button>
-        <button class="hud-btn" data-geometry="quantum">Quantum Core</button>
-      </div>
-      <div class="hud-hint">Drag 360&deg; &bull; Hover</div>
-    </div>
+    <!-- ═══════════════════════════════════════════
+         2. ABOUT BENTO SECTION
+         ═══════════════════════════════════════════ -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">Identity &bull; Background</span>
+          <h2 class="section-heading">Engineering Software with <span class="gradient-text">Purpose &amp; Precision</span></h2>
+          <p class="section-desc">Bridging high-integrity backend transactional logic with fluid, intuitive digital interfaces.</p>
+        </div>
 
-    <div class="scroll-indicator" id="scrollIndicator">
-      <span class="scroll-text">Scroll</span>
-      <div class="scroll-line"><div class="scroll-dot"></div></div>
-    </div>
-  </section>
+        <div class="bento-grid about-bento">
+          <!-- Main Narrative Bento Card -->
+          <div class="bento-card bento-card-main">
+            <div class="bento-header">
+              <span class="bento-chip">PROFILE SUMMARY</span>
+              <span class="bento-badge-city">📍 Olongapo City, Zambales</span>
+            </div>
+            <h3 class="bento-title">Full-Stack Web &amp; Android Developer</h3>
+            <p class="bento-body">
+              I specialize in end-to-end software development—from architecting normalized relational databases and financial billing calculations to crafting declarative Android mobile UIs with Jetpack Compose.
+            </p>
+            <p class="bento-body">
+              My portfolio showcases complex real-world client platforms, including legal case management, multi-tier amortization trackers, employee payroll automation, and psychological student assessment systems.
+            </p>
+            <div class="about-tech-stack-row">
+              <span class="pill-tech">Laravel 11 &amp; 12</span>
+              <span class="pill-tech">PHP 8.2</span>
+              <span class="pill-tech">MySQL &amp; Room SQLite</span>
+              <span class="pill-tech">Kotlin</span>
+              <span class="pill-tech">Jetpack Compose</span>
+              <span class="pill-tech">Tailwind CSS</span>
+              <span class="pill-tech">DomPDF</span>
+              <span class="pill-tech">RESTful APIs</span>
+            </div>
+          </div>
 
-  <!-- ABOUT -->
-  <section class="about section" id="about">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-tag">Who I Am</span>
-        <h2 class="section-title">About <span class="gold">Me</span></h2>
-        <div class="section-line"></div>
+          <!-- Education Card -->
+          <div class="bento-card bento-card-edu">
+            <div class="bento-icon-box">🎓</div>
+            <span class="bento-chip">ACADEMIC EXCELLENCE</span>
+            <h4 class="bento-card-sub">COMTEQ Computer &amp; Business College</h4>
+            <p class="bento-body-sm">Bachelor of Science in Information Technology (BSIT). Specialized in Enterprise Systems &amp; Mobile Software Architecture.</p>
+            <div class="card-footer-metric">
+              <span class="footer-label">Capstone Project:</span>
+              <span class="footer-val">OCNHS Guidance Counseling Profiling System</span>
+            </div>
+          </div>
+
+          <!-- Direct Matrix Card -->
+          <div class="bento-card bento-card-matrix">
+            <span class="bento-chip">COMMUNICATION MATRIX</span>
+            <ul class="matrix-list">
+              <li>
+                <span class="matrix-key">Full Name</span>
+                <span class="matrix-val">Arnold Rey Strader Lapuz</span>
+              </li>
+              <li>
+                <span class="matrix-key">Email</span>
+                <a href="mailto:arnldrylapuz@gmail.com" class="matrix-val matrix-link">arnldrylapuz@gmail.com</a>
+              </li>
+              <li>
+                <span class="matrix-key">Phone</span>
+                <a href="tel:+639664567529" class="matrix-val matrix-link">(+63) 966-456-7529</a>
+              </li>
+              <li>
+                <span class="matrix-key">GitHub</span>
+                <a href="https://github.com/arnldry" target="_blank" rel="noopener noreferrer" class="matrix-val matrix-link">github.com/arnldry</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="about-grid">
-        <div class="about-visual">
-          <div class="avatar-wrapper" id="avatarWrapper">
-            <div class="projector-base"></div>
-            <div class="projector-cone"></div>
-            <div class="gyro-ring gyro-ring-1"></div>
-            <div class="gyro-ring gyro-ring-2"></div>
-            <div class="gyro-ring gyro-ring-3"></div>
-            <div class="avatar-core">
-              <div class="avatar-scanline"></div>
-              <div class="cyber-reactor-rings">
-                <div class="reactor-radar"></div>
-                <div class="reactor-pulse-orb"></div>
-                <div class="reactor-ticks"></div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         3. TECHNICAL SKILLS SECTION
+         ═══════════════════════════════════════════ -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">Technical Mastery</span>
+          <h2 class="section-heading">Core Stacks &amp; <span class="gradient-text-alt">Engineering Tools</span></h2>
+          <p class="section-desc">Battle-tested tools and frameworks utilized to build scalable web platforms and native mobile apps.</p>
+        </div>
+
+        <div class="skills-bento-grid">
+          <!-- Backend & Database Engineering -->
+          <div class="skill-bento-card">
+            <div class="skill-card-top">
+              <div class="skill-icon">⚡</div>
+              <div>
+                <h3 class="skill-group-title">Backend &amp; Database Systems</h3>
+                <span class="skill-group-sub">High-integrity architecture &amp; APIs</span>
               </div>
-              <div class="avatar-cyber-emblem">
-                <div class="emblem-code-tag">&lt;DEV&gt;</div>
-                <div class="emblem-monogram">AL</div>
-                <div class="emblem-sub">CORE NODE</div>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-progress-row">
+                <div class="skill-info"><span>PHP &amp; Laravel (v11 / v12)</span><span class="pct">95%</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-width="95"></div></div>
+              </div>
+              <div class="skill-progress-row">
+                <div class="skill-info"><span>MySQL Schemas &amp; Eloquent ORM</span><span class="pct">90%</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-width="90"></div></div>
+              </div>
+              <div class="skill-progress-row">
+                <div class="skill-info"><span>RESTful API Development</span><span class="pct">88%</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-width="88"></div></div>
+              </div>
+              <div class="skill-progress-row">
+                <div class="skill-info"><span>Automated PDF Generation (DomPDF)</span><span class="pct">92%</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-width="92"></div></div>
               </div>
             </div>
-            <div class="avatar-badge">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-              Full-Stack &amp; Android Dev
+          </div>
+
+          <!-- Native Android & Mobile -->
+          <div class="skill-bento-card">
+            <div class="skill-card-top">
+              <div class="skill-icon">📱</div>
+              <div>
+                <h3 class="skill-group-title">Native Android &amp; Mobile</h3>
+                <span class="skill-group-sub">Reactive UIs &amp; Local Persistence</span>
+              </div>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-progress-row">
+                <div class="skill-info"><span>Kotlin &amp; Android SDK</span><span class="pct">92%</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-width="92"></div></div>
+              </div>
+              <div class="skill-progress-row">
+                <div class="skill-info"><span>Jetpack Compose &amp; Material 3</span><span class="pct">92%</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-width="92"></div></div>
+              </div>
+              <div class="skill-progress-row">
+                <div class="skill-info"><span>Room Database (SQLite Offline-First)</span><span class="pct">88%</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-width="88"></div></div>
+              </div>
+              <div class="skill-progress-row">
+                <div class="skill-info"><span>MVVM, Coroutines &amp; StateFlow</span><span class="pct">86%</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-width="86"></div></div>
+              </div>
             </div>
           </div>
-          <div class="about-floating-card card-1">
-            <span class="fc-icon">⚖️</span>
-            <div><p class="fc-label">Enterprise Systems</p><p class="fc-value">Legal &amp; Billing Platforms</p></div>
-          </div>
-          <div class="about-floating-card card-2">
-            <span class="fc-icon">🎓</span>
-            <div><p class="fc-label">Education</p><p class="fc-value">COMTEQ College</p></div>
+
+          <!-- Modern Web & Tooling -->
+          <div class="skill-bento-card">
+            <div class="skill-card-top">
+              <div class="skill-icon">🛠️</div>
+              <div>
+                <h3 class="skill-group-title">Modern Web &amp; Tooling</h3>
+                <span class="skill-group-sub">Toolchain, Version Control &amp; UI</span>
+              </div>
+            </div>
+            <div class="skill-items-list">
+              <div class="skill-progress-row">
+                <div class="skill-info"><span>Tailwind CSS &amp; Modern Flex/Grid</span><span class="pct">94%</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-width="94"></div></div>
+              </div>
+              <div class="skill-progress-row">
+                <div class="skill-info"><span>JavaScript (ES6+, DOM, Async)</span><span class="pct">88%</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-width="88"></div></div>
+              </div>
+              <div class="skill-progress-row">
+                <div class="skill-info"><span>Git, GitHub &amp; Branching Strategy</span><span class="pct">90%</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-width="90"></div></div>
+              </div>
+              <div class="skill-progress-row">
+                <div class="skill-info"><span>Vite &amp; Build Tooling</span><span class="pct">85%</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-width="85"></div></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="about-content">
-          <p class="about-intro">I'm <strong>Arnold Rey Strader Lapuz</strong>, a software developer based in Olongapo City, Zambales, studying Information Technology at <strong>COMTEQ Computer and Business College</strong>.</p>
-          <p class="about-body">I have a proven track record of engineering complex, production-ready web and mobile applications. My work spans high-stakes enterprise software—such as the <strong>Perez Law Office Billing &amp; Expense Tracker</strong>, the <strong>RegComp Legal Compliance &amp; Hearing Scheduling Platform</strong>, and the <strong>OCNHS Guidance Counseling Profiling System</strong>—as well as reactive native Android apps using <strong>Kotlin, Jetpack Compose, and Room DB</strong>.</p>
-          <p class="about-body">I bridge backend rigor (relational schemas, transactional financial amortization, automated PDF reporting, and RESTful APIs) with sleek modern interfaces that enhance productivity. I believe in clean code, data integrity, and creating software that truly solves practical organizational challenges.</p>
 
-          <!-- Telemetry Information Matrix -->
-          <div class="about-info-matrix">
-            <div class="matrix-card">
-              <span class="matrix-label">FULL NAME</span>
-              <span class="matrix-value">Arnold Rey Strader Lapuz</span>
+        <!-- Tech Pills Carousel Strip -->
+        <div class="tech-marquee-wrapper">
+          <div class="tech-marquee">
+            <span class="t-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" />Laravel</span>
+            <span class="t-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />PHP 8.2</span>
+            <span class="t-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />MySQL</span>
+            <span class="t-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" />Kotlin</span>
+            <span class="t-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android" />Android SDK</span>
+            <span class="t-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="Room DB" />Room SQLite</span>
+            <span class="t-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind" />Tailwind CSS</span>
+            <span class="t-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS" />JavaScript ES6+</span>
+            <span class="t-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />Git / GitHub</span>
+            <span class="t-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" alt="Vite" />Vite</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         4. FEATURED PROJECTS SECTION
+         ═══════════════════════════════════════════ -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">Authentic Work</span>
+          <h2 class="section-heading">Featured <span class="gradient-text">Production Projects</span></h2>
+          <p class="section-desc">Production-ready legal platforms, payroll tracking engines, capstone EdTech software, and native Android apps.</p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="projects-filter-bar">
+          <button class="filter-chip active" data-filter="all">All Projects (8)</button>
+          <button class="filter-chip" data-filter="web">Enterprise Web (4)</button>
+          <button class="filter-chip" data-filter="android">Native Android (4)</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          <!-- 01: Perez Law Office -->
+          <article class="project-card" data-category="web" data-project-id="law_billing">
+            <div class="project-media-wrap">
+              <img src="assets/img/project_law_billing.jpg" alt="Perez Law Office Billing System" class="project-img" loading="lazy" />
+              <div class="project-overlay">
+                <button class="btn-overlay btn-open-modal" data-project="law_billing">View Case Study</button>
+                <a href="https://github.com/arnldry/billing_and_expense_tracker_system" target="_blank" rel="noopener noreferrer" class="btn-overlay-repo" aria-label="GitHub Repository">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+              </div>
             </div>
-            <div class="matrix-card">
-              <span class="matrix-label">LOCATION</span>
-              <span class="matrix-value">Olongapo City, Zambales, PH</span>
+            <div class="project-info">
+              <div class="project-tag-row">
+                <span class="badge-category">Web &bull; Enterprise Legal</span>
+                <span class="project-index">01</span>
+              </div>
+              <h3 class="project-name">Perez Law Office &mdash; Billing &amp; Expense Tracker</h3>
+              <p class="project-summary">Financial automation platform managing client retainer billings, installment amortization schedules, multi-channel payment receipts, and automated PDF Statement of Accounts.</p>
+              <div class="project-pills-row">
+                <span>Laravel 12</span><span>PHP 8.2</span><span>MySQL</span><span>Tailwind</span><span>DomPDF</span>
+              </div>
+              <div class="project-card-footer">
+                <button class="link-details btn-open-modal" data-project="law_billing">Full Details &rarr;</button>
+                <a href="https://github.com/arnldry/billing_and_expense_tracker_system" target="_blank" rel="noopener noreferrer" class="link-github">Repo &nearr;</a>
+              </div>
             </div>
-            <div class="matrix-card">
-              <span class="matrix-label">INSTITUTION</span>
-              <span class="matrix-value">COMTEQ College</span>
+          </article>
+
+          <!-- 02: RegComp -->
+          <article class="project-card" data-category="web" data-project-id="regcomp">
+            <div class="project-media-wrap">
+              <img src="assets/img/project_regcomp.jpg" alt="RegComp Compliance Management System" class="project-img" loading="lazy" />
+              <div class="project-overlay">
+                <button class="btn-overlay btn-open-modal" data-project="regcomp">View Case Study</button>
+                <a href="https://github.com/arnldry/Regcomp-program" target="_blank" rel="noopener noreferrer" class="btn-overlay-repo" aria-label="GitHub Repository">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+              </div>
             </div>
-            <div class="matrix-card">
-              <span class="matrix-label">DIRECT CONTACT</span>
-              <span class="matrix-value">(+63) 966-456-7529</span>
+            <div class="project-info">
+              <div class="project-tag-row">
+                <span class="badge-category">Web &bull; Legal Compliance</span>
+                <span class="project-index">02</span>
+              </div>
+              <h3 class="project-name">RegComp &mdash; Legal Hearings &amp; Compliance Portal</h3>
+              <p class="project-summary">Corporate practice platform featuring an interactive visual court hearings scheduler with multi-day calendar time slots and role-scoped client document vaults.</p>
+              <div class="project-pills-row">
+                <span>Laravel 11</span><span>PHP</span><span>MySQL</span><span>Blade</span><span>Tailwind</span>
+              </div>
+              <div class="project-card-footer">
+                <button class="link-details btn-open-modal" data-project="regcomp">Full Details &rarr;</button>
+                <a href="https://github.com/arnldry/Regcomp-program" target="_blank" rel="noopener noreferrer" class="link-github">Repo &nearr;</a>
+              </div>
             </div>
-            <div class="matrix-card">
-              <span class="matrix-label">PRIMARY EMAIL</span>
-              <span class="matrix-value">arnldrylapuz@gmail.com</span>
+          </article>
+
+          <!-- 03: OCNHS Student Profiling System (Capstone) -->
+          <article class="project-card" data-category="web" data-project-id="student_profiling">
+            <div class="project-media-wrap">
+              <img src="assets/img/project_student_profiling.jpg" alt="OCNHS Guidance Profiling System" class="project-img" loading="lazy" />
+              <div class="project-overlay">
+                <button class="btn-overlay btn-open-modal" data-project="student_profiling">View Case Study</button>
+                <a href="https://github.com/arnldry/Student_profiling_system_105-main" target="_blank" rel="noopener noreferrer" class="btn-overlay-repo" aria-label="GitHub Repository">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+              </div>
             </div>
-            <div class="matrix-card">
-              <span class="matrix-label">GITHUB ID</span>
-              <span class="matrix-value">@arnldry</span>
+            <div class="project-info">
+              <div class="project-tag-row">
+                <span class="badge-category">Web &bull; Capstone EdTech</span>
+                <span class="project-index">03</span>
+              </div>
+              <h3 class="project-name">OCNHS Guidance Counseling Profiling System</h3>
+              <p class="project-summary">Capstone software for Olongapo City National High School. Implements Holland RIASEC career aptitude scoring, Life Values tests, and automated dossier exports.</p>
+              <div class="project-pills-row">
+                <span>Laravel 11</span><span>PHP</span><span>MySQL</span><span>Tailwind</span><span>DomPDF</span>
+              </div>
+              <div class="project-card-footer">
+                <button class="link-details btn-open-modal" data-project="student_profiling">Full Details &rarr;</button>
+                <a href="https://github.com/arnldry/Student_profiling_system_105-main" target="_blank" rel="noopener noreferrer" class="link-github">Repo &nearr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 04: The Alps Hotels (Android) -->
+          <article class="project-card" data-category="android" data-project-id="alps_hotels">
+            <div class="project-media-wrap">
+              <img src="assets/img/project_alps_hotels.jpg" alt="The Alps Hotels Android Application" class="project-img" loading="lazy" />
+              <div class="project-overlay">
+                <button class="btn-overlay btn-open-modal" data-project="alps_hotels">View Case Study</button>
+                <a href="https://github.com/arnldry/Lapuz_TheAlpsHotels" target="_blank" rel="noopener noreferrer" class="btn-overlay-repo" aria-label="GitHub Repository">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tag-row">
+                <span class="badge-category">Android &bull; Compose Declarative</span>
+                <span class="project-index">04</span>
+              </div>
+              <h3 class="project-name">The Alps Hotels &mdash; Alpine Discovery App</h3>
+              <p class="project-summary">Native Android ski resort discovery app built with Kotlin and Jetpack Compose. Features zero-lag filter search, proximity metrics, and Coil image decoding.</p>
+              <div class="project-pills-row">
+                <span>Kotlin</span><span>Jetpack Compose</span><span>Material 3</span><span>Coil</span>
+              </div>
+              <div class="project-card-footer">
+                <button class="link-details btn-open-modal" data-project="alps_hotels">Full Details &rarr;</button>
+                <a href="https://github.com/arnldry/Lapuz_TheAlpsHotels" target="_blank" rel="noopener noreferrer" class="link-github">Repo &nearr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 05: NoteCraft (Android Room DB) -->
+          <article class="project-card" data-category="android" data-project-id="notecraft">
+            <div class="project-media-wrap">
+              <img src="assets/img/project_notecraft.jpg" alt="NoteCraft Android Room DB" class="project-img" loading="lazy" />
+              <div class="project-overlay">
+                <button class="btn-overlay btn-open-modal" data-project="notecraft">View Case Study</button>
+                <a href="https://github.com/arnldry/NoteTakingApp_Lapuz" target="_blank" rel="noopener noreferrer" class="btn-overlay-repo" aria-label="GitHub Repository">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tag-row">
+                <span class="badge-category">Android &bull; SQLite Persistence</span>
+                <span class="project-index">05</span>
+              </div>
+              <h3 class="project-name">NoteCraft &mdash; Tagged Notes &amp; Room SQLite DB</h3>
+              <p class="project-summary">Offline-first mobile note system implementing Room SQLite many-to-many cross-reference tags, MVVM architecture, and reactive StateFlow streams.</p>
+              <div class="project-pills-row">
+                <span>Kotlin</span><span>Room DB</span><span>SQLite</span><span>MVVM</span><span>StateFlow</span>
+              </div>
+              <div class="project-card-footer">
+                <button class="link-details btn-open-modal" data-project="notecraft">Full Details &rarr;</button>
+                <a href="https://github.com/arnldry/NoteTakingApp_Lapuz" target="_blank" rel="noopener noreferrer" class="link-github">Repo &nearr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 06: Workforce Hub -->
+          <article class="project-card" data-category="web" data-project-id="dtr_salary">
+            <div class="project-media-wrap">
+              <img src="assets/img/project_dtr_salary.jpg" alt="Workforce Hub DTR Payroll System" class="project-img" loading="lazy" />
+              <div class="project-overlay">
+                <button class="btn-overlay btn-open-modal" data-project="dtr_salary">View Case Study</button>
+                <a href="https://github.com/ryanerichdelacruz17-blip/Dtr_salary_system" target="_blank" rel="noopener noreferrer" class="btn-overlay-repo" aria-label="GitHub Repository">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tag-row">
+                <span class="badge-category">Web &bull; HR &amp; Payroll</span>
+                <span class="project-index">06</span>
+              </div>
+              <h3 class="project-name">Workforce Hub &mdash; DTR &amp; Salary Payroll System</h3>
+              <p class="project-summary">Automated daily punch clock logs, overtime computation, tardiness penalties, government statutory deductions, and automated payslip PDF generation.</p>
+              <div class="project-pills-row">
+                <span>Laravel</span><span>PHP</span><span>MySQL</span><span>Blade</span><span>DomPDF</span>
+              </div>
+              <div class="project-card-footer">
+                <button class="link-details btn-open-modal" data-project="dtr_salary">Full Details &rarr;</button>
+                <a href="https://github.com/ryanerichdelacruz17-blip/Dtr_salary_system" target="_blank" rel="noopener noreferrer" class="link-github">Repo &nearr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 07: Jokes REST API Client -->
+          <article class="project-card" data-category="android" data-project-id="jokes_api">
+            <div class="project-media-wrap">
+              <img src="assets/img/project_notecraft.jpg" alt="Jokes REST API Client" class="project-img" style="filter: hue-rotate(50deg);" loading="lazy" />
+              <div class="project-overlay">
+                <button class="btn-overlay btn-open-modal" data-project="jokes_api">View Case Study</button>
+                <a href="https://github.com/arnldry/JokesAPIClient" target="_blank" rel="noopener noreferrer" class="btn-overlay-repo" aria-label="GitHub Repository">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tag-row">
+                <span class="badge-category">Android &bull; REST API Network</span>
+                <span class="project-index">07</span>
+              </div>
+              <h3 class="project-name">Jokes REST API Client &mdash; Retrofit &amp; Coroutines</h3>
+              <p class="project-summary">Native Android networking demo showcasing asynchronous Retrofit 2 consumption, background I/O coroutines, and declarative state rendering.</p>
+              <div class="project-pills-row">
+                <span>Kotlin</span><span>Retrofit 2</span><span>OkHttp</span><span>Compose</span>
+              </div>
+              <div class="project-card-footer">
+                <button class="link-details btn-open-modal" data-project="jokes_api">Full Details &rarr;</button>
+                <a href="https://github.com/arnldry/JokesAPIClient" target="_blank" rel="noopener noreferrer" class="link-github">Repo &nearr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 08: Museum Explorer -->
+          <article class="project-card" data-category="android" data-project-id="museum_app">
+            <div class="project-media-wrap">
+              <img src="assets/img/project_alps_hotels.jpg" alt="Museum Explorer Application" class="project-img" style="filter: sepia(0.3) saturate(1.2);" loading="lazy" />
+              <div class="project-overlay">
+                <button class="btn-overlay btn-open-modal" data-project="museum_app">View Case Study</button>
+                <a href="https://github.com/arnldry/Lapuz_Museum" target="_blank" rel="noopener noreferrer" class="btn-overlay-repo" aria-label="GitHub Repository">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-tag-row">
+                <span class="badge-category">Android &bull; Cultural Exhibition</span>
+                <span class="project-index">08</span>
+              </div>
+              <h3 class="project-name">Museum Explorer &amp; Interactive Ticketing App</h3>
+              <p class="project-summary">Android cultural guide featuring rich virtual exhibition browsing, interactive ticket tier selections, and smooth multi-activity navigation.</p>
+              <div class="project-pills-row">
+                <span>Kotlin</span><span>Jetpack Compose</span><span>Navigation</span><span>Material 3</span>
+              </div>
+              <div class="project-card-footer">
+                <button class="link-details btn-open-modal" data-project="museum_app">Full Details &rarr;</button>
+                <a href="https://github.com/arnldry/Lapuz_Museum" target="_blank" rel="noopener noreferrer" class="link-github">Repo &nearr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         5. INTERACTIVE DEV ARCADE SECTION
+         ═══════════════════════════════════════════ -->
+    <section class="section game-section" id="game">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">Playable Demonstration</span>
+          <h2 class="section-heading">Interactive <span class="gradient-text">Dev Arcade</span></h2>
+          <p class="section-desc">Experience real-time interactive development. Blast runtime bugs, collect framework boosts, and see 60 FPS HTML5 Canvas performance in action.</p>
+        </div>
+
+        <div class="game-console-card" id="gameConsole">
+          <!-- Top Console Control Bar -->
+          <div class="console-top-bar">
+            <div class="console-mode-tabs">
+              <button class="console-tab active" id="tabGameShooter">
+                <span>🚀</span> <strong>BUG CRUSHER</strong> (Action)
+              </button>
+              <button class="console-tab" id="tabGameMatrix">
+                <span>⚡</span> <strong>CODE BREAKER</strong> (Reflex)
+              </button>
+            </div>
+
+            <div class="console-indicators">
+              <div class="indicator-group">
+                <span class="ind-label">SCORE:</span>
+                <span class="ind-val ind-score" id="gameScoreVal">00000</span>
+              </div>
+              <div class="indicator-group">
+                <span class="ind-label">HIGH:</span>
+                <span class="ind-val ind-high" id="gameHighVal">00000</span>
+              </div>
+              <div class="indicator-group">
+                <span class="ind-label">BARRIER:</span>
+                <div class="mini-health-bar"><div class="mini-health-fill" id="gameShieldBar"></div></div>
+              </div>
+              <button class="console-tool-btn" id="btnMuteGame" title="Toggle Sound FX">🔊</button>
             </div>
           </div>
 
-          <div class="about-tags">
-            <span class="tag">Laravel 11 &amp; 12</span>
-            <span class="tag">PHP 8.2 &amp; MySQL</span>
-            <span class="tag">Kotlin &amp; Android SDK</span>
-            <span class="tag">Jetpack Compose</span>
-            <span class="tag">Room DB &amp; SQLite</span>
-            <span class="tag">MVVM Architecture</span>
-            <span class="tag">Tailwind CSS</span>
-            <span class="tag">DomPDF Reporting</span>
-            <span class="tag">RESTful APIs</span>
-            <span class="tag">COMTEQ College</span>
+          <!-- Arena Display Screen -->
+          <div class="console-arena-screen">
+            <!-- Shooter Game View -->
+            <div class="arena-view active" id="viewShooter">
+              <canvas id="devGameCanvas" width="800" height="460"></canvas>
+
+              <!-- Start Screen Modal -->
+              <div class="arena-overlay" id="overlayStart">
+                <div class="overlay-card">
+                  <span class="overlay-eyebrow">INTERACTIVE BROWSER GAME</span>
+                  <h3 class="overlay-title">DEV QUEST: BUG CRUSHER</h3>
+                  <p class="overlay-desc">
+                    Pilot Arnold's Cyber Dev Drone! Shoot down incoming bugs (SyntaxError 🐞, NullPointer 🕷️, 404 Exception ⚠️, MemoryLeak 💣) and grab Laravel, PHP, and Kotlin overclocks!
+                  </p>
+                  <div class="overlay-powerups-list">
+                    <span>🐘 PHP Rapid Fire</span>
+                    <span>🔴 Laravel Shield</span>
+                    <span>🔷 Kotlin 3-Way</span>
+                    <span>💎 COMTEQ +150</span>
+                  </div>
+                  <button class="btn-play-action" id="btnStartGameAction">
+                    <span>START RUN</span> &rarr;
+                  </button>
+                  <div class="overlay-keys-hint">
+                    <span>Controls: <kbd>A</kbd> <kbd>D</kbd> or <kbd>&larr;</kbd> <kbd>&rarr;</kbd> Move &bull; <kbd>SPACE</kbd> or Click to Fire &bull; Touch Drag on mobile</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Game Over Screen Modal -->
+              <div class="arena-overlay hidden" id="overlayGameOver">
+                <div class="overlay-card">
+                  <span class="overlay-eyebrow text-danger">RUNTIME TERMINATED</span>
+                  <h3 class="overlay-title">SYSTEM REBOOT REQUIRED</h3>
+                  <div class="game-over-stats-grid">
+                    <div><span class="go-lbl">SCORE</span><span class="go-val" id="goScoreText">0</span></div>
+                    <div><span class="go-lbl">SQUASHED</span><span class="go-val" id="goBugsText">0</span></div>
+                    <div><span class="go-lbl">WAVE</span><span class="go-val" id="goWaveText">1</span></div>
+                    <div><span class="go-lbl">RECORD</span><span class="go-val text-success" id="goRecordText">0</span></div>
+                  </div>
+                  <button class="btn-play-action" id="btnRestartGameAction">
+                    <span>PLAY AGAIN</span> &olarr;
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Code Breaker Game View -->
+            <div class="arena-view hidden" id="viewMatrix">
+              <div class="matrix-breaker-card">
+                <div class="matrix-header">
+                  <span class="matrix-prompt-lbl">MATCH AND DEPLOY THE ACTIVE MODULE BEFORE BUFFER OVERFLOW:</span>
+                  <div class="matrix-target-box" id="matrixTargetWord">LARAVEL_12</div>
+                  <div class="matrix-timer-track"><div class="matrix-timer-fill" id="matrixTimerFill"></div></div>
+                </div>
+                <div class="matrix-options-grid" id="matrixOptionsGrid">
+                  <!-- Populated by JavaScript -->
+                </div>
+                <div class="matrix-stats-row">
+                  <span>Streak: <strong id="matrixStreakVal" class="text-accent">0</strong></span>
+                  <span>Score: <strong id="matrixScoreVal">0</strong></span>
+                  <button class="btn-matrix-start" id="btnMatrixStart">Start Code Breaker</button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="about-actions">
-            <a href="https://github.com/arnldry" target="_blank" rel="noopener noreferrer" class="btn-primary" id="btnGithubProfile">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              <span>Visit GitHub Profile</span>
+
+          <!-- Mobile Virtual Controls -->
+          <div class="console-mobile-gamepad" id="mobileGamepad">
+            <div class="touch-steer-group">
+              <button class="touch-btn" id="touchBtnLeft" aria-label="Steer Left">&larr;</button>
+              <button class="touch-btn" id="touchBtnRight" aria-label="Steer Right">&rarr;</button>
+            </div>
+            <div class="touch-action-group">
+              <button class="touch-btn touch-btn-fire" id="touchBtnFire" aria-label="Shoot Laser">🔥 FIRE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         6. CONTACT SECTION
+         ═══════════════════════════════════════════ -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-eyebrow">Communication &bull; Inquiries</span>
+          <h2 class="section-heading">Let's Build <span class="gradient-text">Something Extraordinary</span></h2>
+          <p class="section-desc">Open for software engineering roles, enterprise platform consultations, and native Android application development.</p>
+        </div>
+
+        <div class="contact-card-grid">
+          <!-- Direct Details Cards -->
+          <div class="contact-info-column">
+            <a href="mailto:arnldrylapuz@gmail.com" class="contact-channel-card">
+              <div class="channel-icon">✉️</div>
+              <div class="channel-content">
+                <span class="channel-label">Email Address</span>
+                <span class="channel-value">arnldrylapuz@gmail.com</span>
+              </div>
+              <span class="channel-arrow">&rarr;</span>
             </a>
-            <a href="#contact" class="btn-secondary">
-              <span>Contact Arnold</span>
+
+            <a href="tel:+639664567529" class="contact-channel-card">
+              <div class="channel-icon">📞</div>
+              <div class="channel-content">
+                <span class="channel-label">Direct Mobile Phone</span>
+                <span class="channel-value">(+63) 966-456-7529</span>
+              </div>
+              <span class="channel-arrow">&rarr;</span>
             </a>
+
+            <a href="https://github.com/arnldry" target="_blank" rel="noopener noreferrer" class="contact-channel-card">
+              <div class="channel-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </div>
+              <div class="channel-content">
+                <span class="channel-label">GitHub Repository</span>
+                <span class="channel-value">github.com/arnldry</span>
+              </div>
+              <span class="channel-arrow">&rarr;</span>
+            </a>
+
+            <div class="contact-location-box">
+              <span class="loc-pin">📍</span>
+              <div>
+                <strong>Olongapo City, Zambales, Philippines</strong>
+                <p>Available for on-site, hybrid, or remote developer positions.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Working Contact Form -->
+          <div class="contact-form-column">
+            <form class="glass-contact-form" id="contactForm" novalidate>
+              <h3 class="form-title">Send a Direct Message</h3>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="formName">Your Full Name</label>
+                  <input type="text" id="formName" name="name" placeholder="John Doe" required />
+                </div>
+                <div class="form-field">
+                  <label for="formEmail">Email Address</label>
+                  <input type="email" id="formEmail" name="email" placeholder="john@example.com" required />
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="formSubject">Subject</label>
+                <input type="text" id="formSubject" name="subject" placeholder="Project Inquiry / Job Opportunity" required />
+              </div>
+              <div class="form-field">
+                <label for="formMessage">Message</label>
+                <textarea id="formMessage" name="message" rows="5" placeholder="Hello Arnold, I'd like to discuss a project..." required></textarea>
+              </div>
+              <button type="submit" class="btn-submit-form" id="btnSubmitForm">
+                <span id="btnSubmitText">Send Message</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+              <div class="form-alert-success" id="formAlertSuccess">
+                ✓ Message sent successfully! Thank you, Arnold will respond shortly.
+              </div>
+            </form>
           </div>
         </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- LUXURY TECH FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <span class="footer-brand">Arnold Rey Strader Lapuz</span>
+        <p class="footer-sub">&copy; 2026 Arnold Lapuz. Engineered with pride in Olongapo City, Philippines.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#hero">Back to Top &uarr;</a>
+        <a href="https://github.com/arnldry" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+        <a href="#projects">Projects</a>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- SKILLS -->
-  <section class="skills section" id="skills">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-tag">Core Competencies</span>
-        <h2 class="section-title">Technical <span class="gold">Skills</span></h2>
-        <div class="section-line"></div>
+  <!-- MODAL: PROJECT CASE STUDY -->
+  <div class="modal-backdrop" id="projectModal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close Case Study">&times;</button>
+      <div class="modal-cover-wrap">
+        <img src="" alt="" id="modalImg" />
       </div>
-      <div class="skills-grid">
-        <!-- Backend & Web Architecture -->
-        <div class="skill-category" data-delay="0">
-          <div class="skill-cat-header">
-            <div class="skill-cat-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </div>
-            <h3>Backend &amp; Web Systems</h3>
-          </div>
-          <div class="skill-bars">
-            <div class="skill-bar-item"><div class="skill-bar-header"><span>PHP &amp; Laravel (11 / 12)</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-width="95"></div></div></div>
-            <div class="skill-bar-item"><div class="skill-bar-header"><span>MySQL Database &amp; Eloquent ORM</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-width="90"></div></div></div>
-            <div class="skill-bar-item"><div class="skill-bar-header"><span>RESTful API Architecture</span><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill" data-width="88"></div></div></div>
-            <div class="skill-bar-item"><div class="skill-bar-header"><span>Node.js, Vite &amp; Full-Stack Tooling</span><span class="skill-pct">84%</span></div><div class="skill-track"><div class="skill-fill" data-width="84"></div></div></div>
-          </div>
-        </div>
-
-        <!-- Android & Mobile Development -->
-        <div class="skill-category" data-delay="100">
-          <div class="skill-cat-header">
-            <div class="skill-cat-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-            </div>
-            <h3>Android &amp; Mobile Development</h3>
-          </div>
-          <div class="skill-bars">
-            <div class="skill-bar-item"><div class="skill-bar-header"><span>Kotlin &amp; Android SDK</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill" data-width="92"></div></div></div>
-            <div class="skill-bar-item"><div class="skill-bar-header"><span>Jetpack Compose &amp; Material 3</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill" data-width="92"></div></div></div>
-            <div class="skill-bar-item"><div class="skill-bar-header"><span>Room Database (SQLite Persistence)</span><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill" data-width="88"></div></div></div>
-            <div class="skill-bar-item"><div class="skill-bar-header"><span>MVVM Architecture &amp; Coroutines</span><span class="skill-pct">86%</span></div><div class="skill-track"><div class="skill-fill" data-width="86"></div></div></div>
-          </div>
-        </div>
-
-        <!-- Frontend & Enterprise Tools -->
-        <div class="skill-category" data-delay="200">
-          <div class="skill-cat-header">
-            <div class="skill-cat-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
-            <h3>Frontend &amp; Enterprise Tools</h3>
-          </div>
-          <div class="skill-bars">
-            <div class="skill-bar-item"><div class="skill-bar-header"><span>Tailwind CSS &amp; Modern UI Layouts</span><span class="skill-pct">94%</span></div><div class="skill-track"><div class="skill-fill" data-width="94"></div></div></div>
-            <div class="skill-bar-item"><div class="skill-bar-header"><span>JavaScript (ES6+, DOM, Async)</span><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill" data-width="88"></div></div></div>
-            <div class="skill-bar-item"><div class="skill-bar-header"><span>DomPDF &amp; Automated Document Export</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill" data-width="92"></div></div></div>
-            <div class="skill-bar-item"><div class="skill-bar-header"><span>Git, GitHub &amp; Version Control</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-width="90"></div></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- TECH PILLS CLOUD -->
-      <div class="tech-cloud">
-        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" class="tech-icon"/>Laravel</div>
-        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="tech-icon"/>PHP</div>
-        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="tech-icon"/>MySQL</div>
-        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" class="tech-icon"/>Kotlin</div>
-        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android" class="tech-icon"/>Android SDK</div>
-        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jetpackcompose/jetpackcompose-original.svg" alt="Jetpack Compose" class="tech-icon" onerror="this.style.display='none'"/>Jetpack Compose</div>
-        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite" class="tech-icon"/>Room DB / SQLite</div>
-        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tech-icon"/>JavaScript ES6+</div>
-        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="tech-icon"/>Tailwind CSS</div>
-        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" alt="Vite" class="tech-icon"/>Vite</div>
-        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="tech-icon"/>Git</div>
-        <div class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="tech-icon" style="filter:invert(1)"/>GitHub</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section class="projects section" id="projects">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-tag">Real Systems &amp; Mobile Apps</span>
-        <h2 class="section-title">Featured <span class="gold">Projects</span></h2>
-        <div class="section-line"></div>
-      </div>
-
-      <!-- FILTER TABS -->
-      <div class="project-filter-bar">
-        <button class="filter-btn active" data-filter="all">All Projects (8)</button>
-        <button class="filter-btn" data-filter="web">Web &amp; Enterprise (4)</button>
-        <button class="filter-btn" data-filter="android">Android &amp; Mobile (4)</button>
-      </div>
-
-      <div class="projects-grid">
-        <!-- 01: Perez Law Office - Billing & Expense Tracker System -->
-        <div class="project-card" data-category="web" data-project-id="law_billing">
-          <div class="project-img-wrapper">
-            <img src="assets/img/project_law_billing.jpg" alt="Perez Law Office Billing System" class="project-img" />
-            <div class="project-img-overlay">
-              <button class="proj-link-btn btn-open-modal" data-project="law_billing">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> View Details
-              </button>
-              <a href="https://github.com/arnldry/billing_and_expense_tracker_system" target="_blank" rel="noopener noreferrer" class="proj-link-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub
-              </a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-number">01</span>
-              <span class="project-type-badge">Web &bull; Enterprise</span>
-            </div>
-            <h3 class="project-title">Perez Law Office — Billing &amp; Expense Tracker</h3>
-            <p class="project-desc">Financial automation system managing legal cases, installment billing amortization, automated email alerts, multi-channel payment receipts, and Statement of Account (SOA) PDF generation.</p>
-            <div class="project-tags">
-              <span class="project-tag">Laravel 12</span><span class="project-tag">PHP 8.2</span><span class="project-tag">MySQL</span><span class="project-tag">Tailwind CSS</span><span class="project-tag">DomPDF</span>
-            </div>
-            <div class="project-card-footer">
-              <button class="btn-card-details btn-open-modal" data-project="law_billing">
-                <span>View Full Details</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-              <a href="https://github.com/arnldry/billing_and_expense_tracker_system" target="_blank" rel="noopener noreferrer" class="card-github-link">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                <span>Repo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 02: RegComp - Regulatory Compliance & Legal Case Management -->
-        <div class="project-card" data-category="web" data-project-id="regcomp">
-          <div class="project-img-wrapper">
-            <img src="assets/img/project_regcomp.jpg" alt="RegComp Compliance Management System" class="project-img" />
-            <div class="project-img-overlay">
-              <button class="proj-link-btn btn-open-modal" data-project="regcomp">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> View Details
-              </button>
-              <a href="https://github.com/arnldry/Regcomp-program" target="_blank" rel="noopener noreferrer" class="proj-link-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub
-              </a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-number">02</span>
-              <span class="project-type-badge">Web &bull; LegalTech</span>
-            </div>
-            <h3 class="project-title">RegComp — Legal Hearings &amp; Compliance Portal</h3>
-            <p class="project-desc">Corporate legal management software featuring an interactive calendar hearing scheduler with multi-day time slots, client document vault, and retainer audit tracking.</p>
-            <div class="project-tags">
-              <span class="project-tag">Laravel 11</span><span class="project-tag">PHP</span><span class="project-tag">MySQL</span><span class="project-tag">Blade</span><span class="project-tag">Tailwind CSS</span>
-            </div>
-            <div class="project-card-footer">
-              <button class="btn-card-details btn-open-modal" data-project="regcomp">
-                <span>View Full Details</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-              <a href="https://github.com/arnldry/Regcomp-program" target="_blank" rel="noopener noreferrer" class="card-github-link">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                <span>Repo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 03: OCNHS Student Profiling System (Capstone) -->
-        <div class="project-card" data-category="web" data-project-id="student_profiling">
-          <div class="project-img-wrapper">
-            <img src="assets/img/project_student_profiling.jpg" alt="OCNHS Guidance Counseling Profiling System" class="project-img" />
-            <div class="project-img-overlay">
-              <button class="proj-link-btn btn-open-modal" data-project="student_profiling">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> View Details
-              </button>
-              <a href="https://github.com/arnldry/Student_profiling_system_105-main" target="_blank" rel="noopener noreferrer" class="proj-link-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub
-              </a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-number">03</span>
-              <span class="project-type-badge">Web &bull; EdTech</span>
-            </div>
-            <h3 class="project-title">OCNHS Guidance Counseling Profiling System</h3>
-            <p class="project-desc">Capstone project for Olongapo City National High School. Implements Holland RIASEC career assessment tests, Life Values psychological evaluation, and automated student dossier exports.</p>
-            <div class="project-tags">
-              <span class="project-tag">Laravel 11</span><span class="project-tag">PHP</span><span class="project-tag">MySQL</span><span class="project-tag">Tailwind CSS</span><span class="project-tag">DomPDF</span>
-            </div>
-            <div class="project-card-footer">
-              <button class="btn-card-details btn-open-modal" data-project="student_profiling">
-                <span>View Full Details</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-              <a href="https://github.com/arnldry/Student_profiling_system_105-main" target="_blank" rel="noopener noreferrer" class="card-github-link">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                <span>Repo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 04: The Alps Hotels - Android Jetpack Compose App -->
-        <div class="project-card" data-category="android" data-project-id="alps_hotels">
-          <div class="project-img-wrapper">
-            <img src="assets/img/project_alps_hotels.jpg" alt="The Alps Hotels Android Application" class="project-img" />
-            <div class="project-img-overlay">
-              <button class="proj-link-btn btn-open-modal" data-project="alps_hotels">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> View Details
-              </button>
-              <a href="https://github.com/arnldry/Lapuz_TheAlpsHotels" target="_blank" rel="noopener noreferrer" class="proj-link-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub
-              </a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-number">04</span>
-              <span class="project-type-badge">Android &bull; Mobile</span>
-            </div>
-            <h3 class="project-title">The Alps Hotels — Alpine Discovery App</h3>
-            <p class="project-desc">Native Android resort discovery app built with Jetpack Compose. Includes real-time search filtering, proximity to ski lift indicators, star ratings, and edge-to-edge UI.</p>
-            <div class="project-tags">
-              <span class="project-tag">Kotlin</span><span class="project-tag">Jetpack Compose</span><span class="project-tag">Material 3</span><span class="project-tag">Coil</span><span class="project-tag">Gson</span>
-            </div>
-            <div class="project-card-footer">
-              <button class="btn-card-details btn-open-modal" data-project="alps_hotels">
-                <span>View Full Details</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-              <a href="https://github.com/arnldry/Lapuz_TheAlpsHotels" target="_blank" rel="noopener noreferrer" class="card-github-link">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                <span>Repo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 05: NoteCraft - Room DB Android Note Taking App -->
-        <div class="project-card" data-category="android" data-project-id="notecraft">
-          <div class="project-img-wrapper">
-            <img src="assets/img/project_notecraft.jpg" alt="NoteCraft Note Taking App" class="project-img" />
-            <div class="project-img-overlay">
-              <button class="proj-link-btn btn-open-modal" data-project="notecraft">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> View Details
-              </button>
-              <a href="https://github.com/arnldry/NoteTakingApp_Lapuz" target="_blank" rel="noopener noreferrer" class="proj-link-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub
-              </a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-number">05</span>
-              <span class="project-type-badge">Android &bull; Architecture</span>
-            </div>
-            <h3 class="project-title">NoteCraft — Tag-Based Notes &amp; SQLite Room DB</h3>
-            <p class="project-desc">Full-featured offline Android note application using Room Database many-to-many relationship mapping, ViewModel reactive state flow, and categorized tag filtering.</p>
-            <div class="project-tags">
-              <span class="project-tag">Kotlin</span><span class="project-tag">Jetpack Compose</span><span class="project-tag">Room DB</span><span class="project-tag">SQLite</span><span class="project-tag">MVVM</span>
-            </div>
-            <div class="project-card-footer">
-              <button class="btn-card-details btn-open-modal" data-project="notecraft">
-                <span>View Full Details</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-              <a href="https://github.com/arnldry/NoteTakingApp_Lapuz" target="_blank" rel="noopener noreferrer" class="card-github-link">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                <span>Repo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 06: Workforce DTR & Payroll Management System -->
-        <div class="project-card" data-category="web" data-project-id="dtr_salary">
-          <div class="project-img-wrapper">
-            <img src="assets/img/project_dtr_salary.jpg" alt="Workforce DTR and Payroll System" class="project-img" />
-            <div class="project-img-overlay">
-              <button class="proj-link-btn btn-open-modal" data-project="dtr_salary">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> View Details
-              </button>
-              <a href="https://github.com/ryanerichdelacruz17-blip/Dtr_salary_system" target="_blank" rel="noopener noreferrer" class="proj-link-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub
-              </a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-number">06</span>
-              <span class="project-type-badge">Web &bull; HR &amp; Payroll</span>
-            </div>
-            <h3 class="project-title">Workforce Hub — DTR &amp; Salary Payroll System</h3>
-            <p class="project-desc">Automated employee attendance tracking with daily punch clock logs, overtime computation, tardiness records, statutory deductions, and automated payslip PDF generation.</p>
-            <div class="project-tags">
-              <span class="project-tag">Laravel</span><span class="project-tag">PHP</span><span class="project-tag">MySQL</span><span class="project-tag">Blade</span><span class="project-tag">DomPDF</span>
-            </div>
-            <div class="project-card-footer">
-              <button class="btn-card-details btn-open-modal" data-project="dtr_salary">
-                <span>View Full Details</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-              <a href="https://github.com/ryanerichdelacruz17-blip/Dtr_salary_system" target="_blank" rel="noopener noreferrer" class="card-github-link">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                <span>Repo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 07: Jokes REST API Client -->
-        <div class="project-card" data-category="android" data-project-id="jokes_api">
-          <div class="project-img-wrapper">
-            <img src="assets/img/project_notecraft.jpg" alt="Jokes REST API Client" class="project-img" style="filter: hue-rotate(45deg);" />
-            <div class="project-img-overlay">
-              <button class="proj-link-btn btn-open-modal" data-project="jokes_api">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> View Details
-              </button>
-              <a href="https://github.com/arnldry/JokesAPIClient" target="_blank" rel="noopener noreferrer" class="proj-link-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub
-              </a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-number">07</span>
-              <span class="project-type-badge">Android &bull; REST API</span>
-            </div>
-            <h3 class="project-title">Jokes REST API Client — Retrofit &amp; Coroutines</h3>
-            <p class="project-desc">Modern Android networking application demonstrating Retrofit 2 REST API consumption, asynchronous coroutine dispatch, and reactive Jetpack Compose state architecture.</p>
-            <div class="project-tags">
-              <span class="project-tag">Kotlin</span><span class="project-tag">Retrofit 2</span><span class="project-tag">OkHttp</span><span class="project-tag">Coroutines</span><span class="project-tag">ViewModel</span>
-            </div>
-            <div class="project-card-footer">
-              <button class="btn-card-details btn-open-modal" data-project="jokes_api">
-                <span>View Full Details</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-              <a href="https://github.com/arnldry/JokesAPIClient" target="_blank" rel="noopener noreferrer" class="card-github-link">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                <span>Repo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 08: Lapuz Museum & Ticketing App -->
-        <div class="project-card" data-category="android" data-project-id="museum_app">
-          <div class="project-img-wrapper">
-            <img src="assets/img/project_alps_hotels.jpg" alt="Museum & Ticketing Application" class="project-img" style="filter: sepia(0.3) saturate(1.2);" />
-            <div class="project-img-overlay">
-              <button class="proj-link-btn btn-open-modal" data-project="museum_app">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> View Details
-              </button>
-              <a href="https://github.com/arnldry/Lapuz_Museum" target="_blank" rel="noopener noreferrer" class="proj-link-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> GitHub
-              </a>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-number">08</span>
-              <span class="project-type-badge">Android &bull; Interactive</span>
-            </div>
-            <h3 class="project-title">Museum Explorer &amp; Interactive Ticketing App</h3>
-            <p class="project-desc">Android application combining a rich virtual cultural museum showcase with an interactive ticket booking, exploration guide, and seat reservation system.</p>
-            <div class="project-tags">
-              <span class="project-tag">Kotlin</span><span class="project-tag">Jetpack Compose</span><span class="project-tag">Navigation</span><span class="project-tag">Material 3</span>
-            </div>
-            <div class="project-card-footer">
-              <button class="btn-card-details btn-open-modal" data-project="museum_app">
-                <span>View Full Details</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-              <a href="https://github.com/arnldry/Lapuz_Museum" target="_blank" rel="noopener noreferrer" class="card-github-link">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                <span>Repo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INTERACTIVE PROJECT DETAILS MODAL -->
-  <div class="modal-backdrop" id="projectModalBackdrop" aria-hidden="true">
-    <div class="modal-container" role="dialog" aria-modal="true">
-      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <div class="modal-img-wrap">
-        <img src="" alt="Project Image" id="modalImage" />
-      </div>
-      <div class="modal-body">
-        <span class="modal-category-tag" id="modalCategory">Web Application</span>
+      <div class="modal-content-wrap">
+        <span class="modal-tag" id="modalTag">Enterprise Web</span>
         <h2 class="modal-title" id="modalTitle">Project Title</h2>
-        <p class="modal-desc" id="modalDesc">Detailed description of the application...</p>
-        
-        <div class="modal-section">
-          <h4 class="modal-section-heading">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            Key Capabilities &amp; Engineering Highlights
-          </h4>
-          <ul class="modal-feature-list" id="modalFeatures"></ul>
+        <p class="modal-desc" id="modalDesc"></p>
+
+        <div class="modal-features-box">
+          <h4 class="modal-subheading">Key Architectural Features</h4>
+          <ul class="modal-features-list" id="modalFeaturesList"></ul>
         </div>
 
-        <div class="modal-section">
-          <h4 class="modal-section-heading">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            Technology Stack &amp; Architecture
-          </h4>
-          <div class="modal-tech-stack" id="modalTechStack"></div>
+        <div class="modal-tech-box">
+          <h4 class="modal-subheading">Technology Stack</h4>
+          <div class="modal-tags-row" id="modalTechRow"></div>
         </div>
 
-        <div class="modal-actions">
-          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-primary" id="modalGithubBtn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            <span>View Source on GitHub</span>
+        <div class="modal-action-row">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-action-primary" id="modalRepoBtn">
+            <span>View Source on GitHub</span> &nearr;
           </a>
-          <button class="btn-secondary" id="modalDismissBtn">Close Details</button>
+          <button class="btn-action-secondary" id="modalDismissBtn">Close</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- CONTACT -->
-  <section class="contact section" id="contact">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-tag">Direct Communication</span>
-        <h2 class="section-title">Get In <span class="gold">Touch</span></h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <p class="contact-intro">
-            Have an enterprise project, web platform, Android mobile application, or software development opportunity? Feel free to contact me directly via email or mobile. I am open to discussing collaborations and engineering roles.
-          </p>
-          <div class="contact-details">
-            <!-- Direct Email Link -->
-            <a href="mailto:arnldrylapuz@gmail.com" class="contact-item" id="contactEmailItem" title="Send email to arnldrylapuz@gmail.com">
-              <div class="contact-item-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div>
-                <p class="ci-label">Email Address</p>
-                <p class="ci-value">arnldrylapuz@gmail.com</p>
-              </div>
-              <span class="contact-item-action">Send Mail &rarr;</span>
-            </a>
-
-            <!-- Direct Contact Number Link -->
-            <a href="tel:+639664567529" class="contact-item" id="contactPhoneItem" title="Call or text (+63) 966-456-7529">
-              <div class="contact-item-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-              </div>
-              <div>
-                <p class="ci-label">Contact Number</p>
-                <p class="ci-value">(+63) 966-456-7529</p>
-              </div>
-              <span class="contact-item-action">Call / SMS &rarr;</span>
-            </a>
-
-            <!-- Location -->
-            <div class="contact-item" id="contactLocation">
-              <div class="contact-item-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <p class="ci-label">Location</p>
-                <p class="ci-value">Olongapo City, Zambales, PH</p>
-              </div>
-              <span class="contact-item-action">Zambales</span>
-            </div>
-
-            <!-- College & Education -->
-            <div class="contact-item" id="contactEducation">
-              <div class="contact-item-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-              </div>
-              <div>
-                <p class="ci-label">Education</p>
-                <p class="ci-value">COMTEQ Computer &amp; Business College</p>
-              </div>
-              <span class="contact-item-action">College</span>
-            </div>
-          </div>
-
-          <div class="social-links">
-            <a href="https://github.com/arnldry" target="_blank" rel="noopener noreferrer" class="social-link" id="socialGithub" aria-label="GitHub" title="Arnold's GitHub Profile">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2c-3.34.73-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-            <a href="mailto:arnldrylapuz@gmail.com" class="social-link" id="socialEmailDirect" aria-label="Direct Email" title="Direct Email">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </a>
-            <a href="tel:+639664567529" class="social-link" id="socialPhoneDirect" aria-label="Direct Phone" title="Direct Phone">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- CONTACT FORM -->
-        <form class="contact-form" id="contactForm" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="contactName" class="form-label">Full Name</label>
-              <input type="text" id="contactName" name="name" class="form-input" placeholder="Your Name" required />
-            </div>
-            <div class="form-group">
-              <label for="contactEmailInput" class="form-label">Email Address</label>
-              <input type="email" id="contactEmailInput" name="email" class="form-input" placeholder="your.email@example.com" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="contactSubject" class="form-label">Subject</label>
-            <input type="text" id="contactSubject" name="subject" class="form-input" placeholder="Project Inquiry / Job Opportunity" required />
-          </div>
-          <div class="form-group">
-            <label for="contactMessage" class="form-label">Message</label>
-            <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="Hello Arnold, I'd like to discuss a project..." rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn-primary btn-full" id="submitBtn">
-            <span id="submitBtnText">Send Message</span>
-            <svg id="submitBtnIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          </button>
-          <div class="form-success" id="formSuccess">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Message sent! Thank you, Arnold will get back to you shortly.</span>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <p class="footer-copy">&copy; 2026 <span class="gold">Arnold Rey Strader Lapuz</span>. Built with pride in Olongapo City, Philippines.</p>
-      <p class="footer-back"><a href="#hero" id="backToTop">&#8593; Back to top</a></p>
-    </div>
-  </footer>
-
-  <!-- 5D CYBERNETIC TELEMETRY DOCK (HUD) -->
-  <aside class="cyber-telemetry-dock" id="cyberTelemetryDock" aria-label="5D Spatial Telemetry System">
-    <div class="telemetry-row">
-      <span class="telemetry-status-led"></span>
-      <span class="telemetry-tag">5D HUD:</span>
-      <span class="telemetry-val" id="hudSystemStatus">QUANTUM_STABLE</span>
-    </div>
-    <div class="telemetry-row">
-      <span class="telemetry-tag">COORDS:</span>
-      <span class="telemetry-val mono" id="hudCoords">X: 000 | Y: 000</span>
-    </div>
-    <div class="telemetry-row">
-      <span class="telemetry-tag">WARP:</span>
-      <span class="telemetry-val mono" id="hudWarp">1.00x [CRUISE]</span>
-    </div>
-    <div class="telemetry-row">
-      <span class="telemetry-tag">5D SCENE:</span>
-      <span class="telemetry-val mono" id="hudDimension">1/5 [COSMIC_WARP]</span>
-    </div>
-    <div class="telemetry-row">
-      <span class="telemetry-tag">5D FREQ:</span>
-      <span class="telemetry-val mono" id="hudAudioFreq">PENTATONIC</span>
-      <div class="hud-mini-spectrum" id="hudSpectrum">
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
-    </div>
-  </aside>
-
-  <script src="assets/js/three.min.js"></script>
   <script src="assets/js/main.min.js"></script>
 </body>
 </html>
